@@ -10,7 +10,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.post('/ajax', (req, res, next) => {
     console.log(req);
-    res.send('Test');
+    res.json(['Test']);
 });
 
 app.listen(3000, () => console.log('Listening on port 3000...'));
