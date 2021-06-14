@@ -25,6 +25,10 @@ app.use((req, res, next) => {
     next()
 })
 
+app.param('id', (req, res, next, id) => {
+    next()
+})
+
 app.get('/', (req, res, next) => {
     res.send('Sanity Check')
 })
@@ -40,6 +44,10 @@ app.get('/logout', (req, res, next) => {
 
 app.get('/welcome', (req, res, next) => {
     res.render('welcome', {username: req.cookies.username})
+})
+
+app.get('/story/:storyId', (req, res, next) => {
+    res.send(`<h1>Story ${req.params.storyId}</h1>`)
 })
 
 app.post('/process_login', (req, res, next) => {
