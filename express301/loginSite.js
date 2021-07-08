@@ -60,4 +60,8 @@ app.post('/process_login', (req, res, next) => {
     }
 })
 
+app.get('/statement', (req, res, next) => {
+    res.download(path.join(__dirname, 'statements/bankstatement'), 'bankstatement.txt')
+})
+
 app.listen(3000, () => console.log('Listening on port 3000...'))
